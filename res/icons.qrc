@@ -1,0 +1,11 @@
+<!DOCTYPE RCC><RCC version="1.0">
+<qresource>
+    <file>icons/data_transfer_arrow.svg</file>
+    <file>icons/dir.png</file>
+    <file>icons/file.png</file>
+    <file>icons/link.png</file>
+    <file>icons/larr.svg</file>
+    <file>icons/rarr.svg</file>
+    <file>icons/app_icon.ico</file>
+</qresource>
+</RCC>

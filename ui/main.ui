@@ -1,0 +1,396 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1399</width>
+    <height>714</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>CFT</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QTreeWidget" name="remoteFileTreeWidget">
+    <property name="geometry">
+     <rect>
+      <x>790</x>
+      <y>40</y>
+      <width>591</width>
+      <height>481</height>
+     </rect>
+    </property>
+    <property name="columnCount">
+     <number>4</number>
+    </property>
+    <attribute name="headerDefaultSectionSize">
+     <number>100</number>
+    </attribute>
+    <column>
+     <property name="text">
+      <string notr="true">1</string>
+     </property>
+    </column>
+    <column>
+     <property name="text">
+      <string notr="true">2</string>
+     </property>
+    </column>
+    <column>
+     <property name="text">
+      <string notr="true">3</string>
+     </property>
+    </column>
+    <column>
+     <property name="text">
+      <string notr="true">4</string>
+     </property>
+    </column>
+   </widget>
+   <widget class="QLineEdit" name="localPathEdit">
+    <property name="geometry">
+     <rect>
+      <x>60</x>
+      <y>10</y>
+      <width>521</width>
+      <height>31</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="remotePathEdit">
+    <property name="geometry">
+     <rect>
+      <x>790</x>
+      <y>10</y>
+      <width>591</width>
+      <height>31</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QTreeView" name="localFileTreeView">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>40</y>
+      <width>561</width>
+      <height>481</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QListWidget" name="logListWidget">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>530</y>
+      <width>1361</width>
+      <height>131</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QToolButton" name="fileOpenToolButton">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>10</y>
+      <width>41</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>...</string>
+    </property>
+    <property name="icon">
+     <iconset resource="../res/icons.qrc">
+      <normaloff>:/icons/dir.png</normaloff>:/icons/dir.png</iconset>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>32</width>
+      <height>32</height>
+     </size>
+    </property>
+   </widget>
+   <widget class="QToolButton" name="localToRemoteSendButton">
+    <property name="geometry">
+     <rect>
+      <x>590</x>
+      <y>190</y>
+      <width>191</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>...</string>
+    </property>
+    <property name="icon">
+     <iconset resource="../res/icons.qrc">
+      <normaloff>:/icons/rarr.svg</normaloff>:/icons/rarr.svg</iconset>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>64</width>
+      <height>64</height>
+     </size>
+    </property>
+   </widget>
+   <widget class="QToolButton" name="remoteToLocalSendButton">
+    <property name="geometry">
+     <rect>
+      <x>590</x>
+      <y>260</y>
+      <width>191</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>...</string>
+    </property>
+    <property name="icon">
+     <iconset resource="../res/icons.qrc">
+      <normaloff>:/icons/larr.svg</normaloff>:/icons/larr.svg</iconset>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>64</width>
+      <height>64</height>
+     </size>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1399</width>
+     <height>33</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menu">
+    <property name="title">
+     <string>ファイル</string>
+    </property>
+    <addaction name="menuConnect"/>
+    <addaction name="menuExit"/>
+    <addaction name="menuClose"/>
+   </widget>
+   <addaction name="menu"/>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+  <action name="menuOpen">
+   <property name="text">
+    <string>開く</string>
+   </property>
+  </action>
+  <action name="menuClose">
+   <property name="text">
+    <string>閉じる</string>
+   </property>
+  </action>
+  <action name="menuExit">
+   <property name="text">
+    <string>切断</string>
+   </property>
+  </action>
+  <action name="menuConnect">
+   <property name="text">
+    <string>接続</string>
+   </property>
+  </action>
+ </widget>
+ <resources>
+  <include location="../res/icons.qrc"/>
+ </resources>
+ <connections>
+  <connection>
+   <sender>menuClose</sender>
+   <signal>triggered()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>close()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>399</x>
+     <y>299</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>menuOpen</sender>
+   <signal>triggered()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>fileOpen()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>399</x>
+     <y>299</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>remoteFileTreeWidget</sender>
+   <signal>itemDoubleClicked(QTreeWidgetItem*,int)</signal>
+   <receiver>MainWindow</receiver>
+   <slot>itemDoubleClicked()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>928</x>
+     <y>230</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>761</x>
+     <y>240</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>localFileTreeView</sender>
+   <signal>doubleClicked(QModelIndex)</signal>
+   <receiver>MainWindow</receiver>
+   <slot>localFileItemDoubleClicked()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>556</x>
+     <y>316</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>641</x>
+     <y>325</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>remotePathEdit</sender>
+   <signal>returnPressed()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>remoteEnterPressed()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>823</x>
+     <y>61</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>745</x>
+     <y>70</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>localPathEdit</sender>
+   <signal>returnPressed()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>localPathEnterPressed()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>562</x>
+     <y>67</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>587</x>
+     <y>48</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>menuExit</sender>
+   <signal>triggered()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>menuExit()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>699</x>
+     <y>356</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>fileOpenToolButton</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>fileOpen()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>37</x>
+     <y>62</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>671</x>
+     <y>168</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>menuConnect</sender>
+   <signal>triggered()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>menuConnect()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>699</x>
+     <y>356</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>localToRemoteSendButton</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>localToRemoteButtonClicked()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>617</x>
+     <y>229</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>630</x>
+     <y>190</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>remoteToLocalSendButton</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>remoteToLocalButtonClicked()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>605</x>
+     <y>330</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>602</x>
+     <y>368</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>fileOpen()</slot>
+  <slot>itemDoubleClicked()</slot>
+  <slot>remoteEnterPressed()</slot>
+  <slot>localFileItemDoubleClicked()</slot>
+  <slot>localPathEnterPressed()</slot>
+  <slot>menuExit()</slot>
+  <slot>menuConnect()</slot>
+  <slot>localToRemoteButtonClicked()</slot>
+  <slot>remoteToLocalButtonClicked()</slot>
+ </slots>
+</ui>
