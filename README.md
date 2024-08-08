@@ -11,14 +11,14 @@
  
 # Installation
 
-## Windows
+## Windows Linux
 Releaseからdownloadお願いいたします。
 
-## Linux Mac
+## Mac
 ```bash
 pip install -r requirements.tx
 
-python3 ./src/CFT.py
+python3 src/CFT.py
 ```
  
 # Author
