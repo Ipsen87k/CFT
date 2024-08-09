@@ -11,10 +11,10 @@
  
 # Installation
 
-## Windows Linux
+## Windows Ubuntu
 Releaseからdownloadお願いいたします。
 
-## Mac
+## Build
 ```bash
 pip install -r requirements.tx
 
